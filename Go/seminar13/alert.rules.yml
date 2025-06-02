@@ -1,0 +1,20 @@
+groups:
+  - name: go_app_alerts
+    rules:
+      - alert: HighMemoryUsage
+        expr: go_memstats_alloc_bytes > 100000000
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High memory usage detected"
+          description: "Memory usage is above 100MB for more than 1 minute"
+
+      - alert: TooManyGoroutines
+        expr: go_goroutines > 100
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Too many goroutines"
+          description: "Goroutine count exceeds 100 for over 1 minute"
