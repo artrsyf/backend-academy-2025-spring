@@ -1,0 +1,64 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Go App Monitoring",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "Total HTTP Requests",
+        "targets": [
+          {
+            "expr": "http_requests_total",
+            "legendFormat": "requests",
+            "refId": "A"
+          }
+        ],
+        "datasource": null,
+        "gridPos": { "x": 0, "y": 0, "w": 12, "h": 8 }
+      },
+      {
+        "type": "graph",
+        "title": "Goroutines",
+        "targets": [
+          {
+            "expr": "go_goroutines",
+            "legendFormat": "goroutines",
+            "refId": "A"
+          }
+        ],
+        "datasource": null,
+        "gridPos": { "x": 12, "y": 0, "w": 12, "h": 8 }
+      },
+      {
+        "type": "graph",
+        "title": "Memory Usage (bytes)",
+        "targets": [
+          {
+            "expr": "go_memstats_alloc_bytes",
+            "legendFormat": "allocated",
+            "refId": "A"
+          }
+        ],
+        "datasource": null,
+        "gridPos": { "x": 0, "y": 8, "w": 12, "h": 8 }
+      },
+      {
+        "type": "graph",
+        "title": "GC Pause Time (sum)",
+        "targets": [
+          {
+            "expr": "rate(go_memstats_gc_pause_seconds_sum[1m])",
+            "legendFormat": "GC Pause (s)",
+            "refId": "A"
+          }
+        ],
+        "datasource": null,
+        "gridPos": { "x": 12, "y": 8, "w": 12, "h": 8 }
+      }
+    ],
+    "schemaVersion": 30,
+    "version": 1,
+    "refresh": "10s",
+    "timezone": "browser"
+  }
+}

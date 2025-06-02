@@ -1,0 +1,13 @@
+version: v2
+
+lint:
+  use:
+    - STANDARD
+  rpc_allow_google_protobuf_empty_responses: false
+
+breaking:
+  use:
+    - FILE
+    - PACKAGE
+    - WIRE_JSON
+    - WIRE

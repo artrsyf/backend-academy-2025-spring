@@ -1,0 +1,5 @@
+services:
+  bot:
+    build: ./scrapper
+    environment:
+      - SCRAPER_URL=scrapper:8080
